@@ -8,6 +8,12 @@ import os.path
 import platform
 import re
 import time
+import threading
+import objc
+objc.loadBundle('CoreWLAN',
+                bundle_path = '/System/Library/Frameworks/CoreWLAN.framework',
+                module_globals = globals())
+
 try:
     import pywifi
     from pywifi import PyWiFi
